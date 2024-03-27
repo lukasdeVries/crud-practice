@@ -1,0 +1,25 @@
+.country {
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    padding: 20px;
+    &__name {
+        font-weight: 700;
+        font-size: 20px;
+        @media (max-width: 350px) {
+            font-size: 5.4vw;
+        }
+    }
+    &__universe {
+        color: $--light-text;
+        font-weight: 300;
+    }
+    &__info {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 18px;
+    }
+    .edit {
+        top: 24px;
+    }
+}

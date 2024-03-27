@@ -1,0 +1,29 @@
+.header {
+    > .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__nav {
+        display: flex;
+        flex-direction: row;
+        gap: 25px;
+        padding: 30px 0;
+        @media (max-width: 820px) {
+            display: none;
+        }
+    }
+    &__link {
+        list-style: none;
+        > a {
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: all 200ms ease-in-out;
+            &:hover {
+                font-weight: 800;
+                cursor: pointer;
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+.character {
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    padding: 20px;
+    &__name {
+        font-weight: 700;
+        font-size: 20px;
+    }
+    &__description {
+        margin: 18px 0 10px 0;
+        line-height: 21px;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        min-height: calc(21px * 4);
+    }
+    &__country {
+        color: $--light-text;
+        font-weight: 300;
+    }
+}

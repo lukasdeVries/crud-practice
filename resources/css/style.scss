@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+// Albert sans
+
+$--header-font: 'Montserrat';
+$--base-font: 'Nunito';
+
+$--black: #000;
+$--white: #fff;
+$--grey: #adb5bd;
+
+$--light-text: #495057;
+
+$--hover-card-bg: #e9ecef;
+$--hover-card-overlay: #a8adb134;
+$--overlay-dark: #080707a2;
+$--footer-bg: #e9ecef;
+$--button-bg-blue: #277df6;
+$--button-bg-blue--hover: darken($--button-bg-blue, 6);
+$--button-bg-red: #e61f1c;
+$--button-bg-red--hover: darken($--button-bg-red, 6);
+
+@import 'layout/index';
+@import 'pages/index';
+@import 'form';
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    box-sizing: border-box;
+    font-family: $--base-font;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+h1, h2, h3, h4 {
+    font-family: $--header-font;
+}
+
+h2 {
+    font-size: medium;
+}
+
+a {
+    text-decoration: none;
+    color: unset;
+}
+
+.dash {
+    height: 2px;
+    border-radius: 2px;
+    width: 60px;
+    &--white {
+        background-color: $--white;
+    }
+    &--grey {
+        background-color: $--grey;
+    }
+}
+
+.button {
+    padding: 8px 13px 8px 13px;
+    border-radius: 8px;
+    transition: all 200ms ease-in-out;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    width: fit-content;
+    height: fit-content;
+    span {
+        font-size: 19px;
+    }
+    &:hover {
+        cursor: pointer;
+        border-radius: 15px;
+    }
+    &--blue {
+        &:hover {
+            background-color: $--button-bg-blue--hover;
+        }
+        background-color: $--button-bg-blue;
+        color: $--white;
+    }
+    &--red {
+        &:hover {
+            background-color: $--button-bg-red--hover;
+        }
+        background-color: $--button-bg-red;
+        color: $--white;
+    }
+}
