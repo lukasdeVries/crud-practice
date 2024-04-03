@@ -3,6 +3,9 @@
 @section('content')
     <div class="container">
         <div class="page">
+            <div class="page__top">
+                <h1>Universum</h1>
+            </div>
             <form action="{{ route('country.store') }}" class="form" method="post">
                 @csrf 
                 <input type="text" name="name" placeholder="Naam">

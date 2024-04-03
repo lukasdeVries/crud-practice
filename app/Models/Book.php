@@ -15,7 +15,15 @@ class Book extends Model
         return $this->hasManny(Country::class);
     }
 
+    public function universe() {
+        return $this->belongsTo(Universe::class);
+    }
+
+    public function author() {
+        return $this->belongsTo(Author::class);
+    }
+
     public function characters() {
-        return $this->belongsToMany(Character::class, 'book_character', 'character_id', 'book_id');
+        return $this->belongsToMany(Character::class);
     }
 }

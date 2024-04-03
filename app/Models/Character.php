@@ -12,7 +12,7 @@ class Character extends Model
     protected $guarded = [];
 
     public function books() {
-        return $this->belongsToMany(Book::class, 'book_character', 'character_id', 'book_id');  
+        return $this->belongsToMany(Book::class);  
     }
     public function country() { 
         return $this->belongsTo(Country::class);

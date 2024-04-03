@@ -28,6 +28,7 @@
         <div class="container">
             <ul class="nav">
                 <li class="nav__link"><a href="{{ route('character.index') }}">Karakters</a></li>
+                <li class="nav__link"><a href="{{ route('country.index') }}">Landen</a></li>
                 <li class="nav__link"><a href="{{ route('book.index') }}">Boeken</a></li>
                 <li class="nav__link"><a href="{{ route('universe.index') }}">Universums</a></li>
                 <li class="nav__link"><a href="{{ route('author.index') }}">Auteurs</a></li>

@@ -20,7 +20,7 @@
                             <img src="{{ asset('storage/image/logen.jpg') }}" alt="">
                         </div>
                         <div class="type__content">
-                            <h3 class="type__header">characters</h3>
+                            <h3 class="type__header">Karakters</h3>
                             <div class="dash dash--grey"></div>
                             <div class="type__descriptor">Zie al je opgeslagen characters</div>
                         </div>

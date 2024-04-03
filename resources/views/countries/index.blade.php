@@ -5,7 +5,7 @@
         <div class="page">
             <div class="page__top">
                 <h1>Landen</h1>
-                <a href="{{ route('country.create') }}" class="button button--blue">Nieuw Land<span class="material-symbols-outlined">add_circle</span></a>
+                <a href="{{ route('country.create') }}" class="button button--blue">Nieuw Land</a>
             </div>
             <div class="page__grid page__grid--countries">
                 @foreach ($countries as $country)

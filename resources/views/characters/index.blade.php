@@ -5,7 +5,7 @@
         <div class="page">
             <div class="page__top">
                 <h1>Karakters</h1>
-                <a href="{{ route('character.create') }}" class="button button--blue">Nieuw karakter<span class="material-symbols-outlined">add_circle</span></a>
+                <a href="{{ route('character.create') }}" class="button button--blue">Nieuw karakter</a>
             </div>
             <div class="page__grid">
                 @foreach ($characters as $character)

@@ -35,6 +35,28 @@
             border-radius: 13px;
         }
     }
+
+    input[type='checkbox'] {
+        width: fit-content;
+        box-shadow: unset;
+    }
+
+    &__group {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        &--horizontal {
+            gap: 8px;
+            align-items: center;
+            flex-direction: row;
+        }
+        &--hidden {
+            overflow: hidden;
+            max-height: 0px;
+            transition: all 200ms ease-in-out;
+        }
+    }
+
     &__bottom {
         display: flex;
         flex-direction: row-reverse;
