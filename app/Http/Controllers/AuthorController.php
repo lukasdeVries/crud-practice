@@ -41,4 +41,22 @@ class AuthorController extends Controller
         
         return view('authors/edit')->with('author', $author);
     }
+
+    public function update (Request $request, $id) {
+        $this->validate($request, [
+            'name'=> 'required',
+            'nationality'=> 'required',
+            'date_of_birth'=> 'required',
+        ]);
+
+        $author = Author::findOrFail( $id );
+        $author->name = $request->name;
+        $author->date_of_birth = $request->date_of_birth;
+        $author->nationality = $request->nationality;
+        $author->is_alive = $request->is_alive;
+        $author->date_of_death = $request->date_of_death;
+        $author->save();
+
+        return redirect()->route('author.index')->with('success','Autheur succesvol opgeslagen');
+    }
 }
