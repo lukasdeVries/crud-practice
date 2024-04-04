@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    if(window.location.href.indexOf('author/create') >-1 ) {
+    if(window.location.href.indexOf('author/') >-1) {
         let checkbox = document.querySelector('input[type="checkbox"]')
         let hiddenInput = document.querySelector('.form__group--hidden')
         if (checkbox && hiddenInput) {            
