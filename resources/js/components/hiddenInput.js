@@ -12,14 +12,14 @@ document.addEventListener('DOMContentLoaded', () => {
             })
         }
         function openInput(input) {
-            if (!input.classList.contains('open-form-group')) {
-                input.classList.add('open-form-group')
+            if (!input.classList.contains('form__group--open')) {
+                input.classList.add('form__group--open')
             }   
         }
 
         function closeInput(input) {
-            if(input.classList.contains('open-form-group')) {
-                input.classList.remove('open-form-group')
+            if(input.classList.contains('form__group--open')) {
+                input.classList.remove('form__group--open')
             }
         }
     }

@@ -55,6 +55,9 @@
             max-height: 0px;
             transition: all 200ms ease-in-out;
         }
+        &--open {
+            max-height: 60px;
+        }
     }
 
     &__bottom {
