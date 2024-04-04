@@ -35,4 +35,10 @@ class AuthorController extends Controller
         return redirect()->route('author.index')->with('success','');
 
     }
+
+    public function edit ($id) {
+        $author = Author::findOrFail($id);
+        
+        return view('authors/edit')->with('author', $author);
+    }
 }
