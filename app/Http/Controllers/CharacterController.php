@@ -22,8 +22,8 @@ class CharacterController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            "name" => "required",
-            "description" => "required",
+            "name" => "required|max:255|",
+            "description" => "required|max:2000",
             "country_id" => "required"
         ]);
 
