@@ -23,7 +23,7 @@
                         <input type="checkbox" name="is_alive" value="1">
                     @endif
                 </div>
-                @if ($author->is_alive)
+                @if (!$author->is_alive)
                     <div class="form__group form__group--open">
                         <label for="date_of_death">Datum overlijden</label>
                         <input type="date" class="date_of_death" name="date_of_death"
