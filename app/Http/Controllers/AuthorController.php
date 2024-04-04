@@ -59,4 +59,10 @@ class AuthorController extends Controller
 
         return redirect()->route('author.index')->with('success','Autheur succesvol opgeslagen');
     }
+
+    public function destroy ($id) {
+        $author = Author::findOrFail($id);
+        $author->delete();
+        return redirect()->route('author.index')->with('success','Auteur succesvol verwijderd');
+    }
 }
