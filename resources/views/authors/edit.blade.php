@@ -6,7 +6,7 @@
             <div class="page__top">
                 <h1>Authors</h1>
             </div>
-            <form action="{{ route('author.update') }}" class="form" method="post">
+            <form action="{{ route('author.update', $author->id) }}" class="form" method="post">
                 @csrf
                 <input type="text" name="name" placeholder="Naam" value="{{ $author->name }}">
                 <div class="form__group">
