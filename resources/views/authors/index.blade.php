@@ -9,7 +9,10 @@
             </div>
             <div class="page__grid">
                 @foreach ($authors as $author)
+                <div class="author">
                     <p>{{ $author->name }}</p>
+                    <a class="edit" href="{{ route('author.edit', $author->id) }}"><span class="material-symbols-outlined">edit</span></a>
+                </div>
                 @endforeach
             </div>
         </div>
