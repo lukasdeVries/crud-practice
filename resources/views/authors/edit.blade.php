@@ -8,6 +8,7 @@
             </div>
             <form action="{{ route('author.update', $author->id) }}" class="form" method="post">
                 @csrf
+                @method('put')
                 <input type="text" name="name" placeholder="Naam" value="{{ $author->name }}">
                 <div class="form__group">
                     <label for="date_of_birth">Geboorte datum</label>
