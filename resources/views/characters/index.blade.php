@@ -13,6 +13,11 @@
                         <div class="character__info">
                             <p class="character__name">{{ $character->name }}</p>
                             <p class="character__description">{{ $character->description }}</p>
+                            <p class="charcter__books">
+                                @foreach ($character->books as $book)
+                                    <span> "{{ $book->title }}"</span>
+                                @endforeach
+                            </p>
                             <p class="character__country">{{ $character->country->name }}</p>
                         </div>
                         <a class="edit" href="{{ route('character.edit', $character->id) }}">

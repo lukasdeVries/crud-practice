@@ -16,20 +16,34 @@
                     @foreach ($countrys as $country)
                         @if ($country->id === $character->country->id)
                             <option selected value="{{ $country->id }}">{{ $country->name }}</option>
-                        @else 
+                        @else
                             <option value="{{ $country->id }}">{{ $country->name }}</option>
                         @endif
                     @endforeach
                 </select>
+                <div class="form__grid">
+                    @foreach ($books as $book)
+                        <div class="form__group form__group--horizontal">
+                            <label for="book__{{ $book->id }}">{{ $book->title }}</label>
+                            @if ($character->books->contains($book->id))
+                                <input checked type="checkbox" name="books[]" id="book__{{ $book->id }}"
+                                value="{{ $book->id }}">
+                            @else 
+                                <input type="checkbox" name="books[]" id="book__{{ $book->id }}"
+                                value="{{ $book->id }}">
+                            @endif
+                        </div>
+                    @endforeach
+                </div>
                 <div class="form__bottom">
                     <input type="submit" value="Oplsaan">
             </form>
-                    <form class="form form--delete" action="{{ route('character.destroy', $character->id) }}" method="post">
-                        @csrf
-                        @method('delete')
-                        <input class="button button--red" type="submit" value="Verwijderen">
-                    </form>
-                </div>
+            <form class="form form--delete" action="{{ route('character.destroy', $character->id) }}" method="post">
+                @csrf
+                @method('delete')
+                <input class="button button--red" type="submit" value="Verwijderen">
+            </form>
         </div>
+    </div>
     </div>
 @endsection

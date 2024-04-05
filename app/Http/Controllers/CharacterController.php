@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Book;
 use App\Models\Character;
 use App\Models\Country;
 use Illuminate\Http\Request;
@@ -16,7 +17,11 @@ class CharacterController extends Controller
     public function create()
     {
         $countrys = Country::all();
-        return view("characters/create")->with("countrys", $countrys);
+        $books = Book::all();
+        return view("characters/create")->with([
+            "countrys" => $countrys,
+            "books" => $books
+        ]);
     }
 
     public function store(Request $request)
@@ -24,7 +29,7 @@ class CharacterController extends Controller
         $this->validate($request, [
             "name" => "required|max:255|",
             "description" => "required|max:2000",
-            "country_id" => "required"
+            "country_id" => "required|integer"
         ]);
 
         $character = Character::create([
@@ -33,6 +38,8 @@ class CharacterController extends Controller
             "country_id" => $request->country_id
         ]);
 
+        $character->books()->sync($request->input('boeken'));
+
         return redirect()->route("character.index");
     }
 
@@ -40,19 +47,21 @@ class CharacterController extends Controller
     {
         $character = Character::findOrFail( $id );
         $countrys = Country::all();
+        $books = Book::all();
 
         return view("characters.edit")->with([
             "character" => $character,
-            "countrys" => $countrys
+            "countrys" => $countrys,
+            "books"=> $books
         ]);
     }
 
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            "name" => "required",
-            "description" => "required",
-            "country_id" => "required"
+            "name" => "required|max:255|",
+            "description" => "required|max:2000",
+            "country_id" => "required|integer"
         ]);
 
         $character = Character::findOrFail( $id );
