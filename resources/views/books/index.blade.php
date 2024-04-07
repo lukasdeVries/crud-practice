@@ -7,13 +7,13 @@
                 <h1>Boeken</h1>
                 <a class="button button--blue" href="{{ route('book.create') }}">Nieuw boek</a>
             </div>
-            <div class="page__grid">
+            <div class="book__grid">
                 @foreach ($books as $book)
                 <div class="book">
-                    <p>{{ $book->title }}</p>
-                    <p>{{ $book->author->name }}</p>
-                    <p>{{ $book->universe->name }}</p>
-                    <a class="edit" href="{{ route('book.edit', $book->id) }}"><span class="material-symbols-outlined">edit</span></a>
+                    <a href="{{ route('book.edit', $book->id) }}">
+                        <p class="book__title">{{ $book->title }}</p>
+                        <p class="book__author">{{ $book->author->name }}</p>
+                    </a>
                 </div>
                 @endforeach
             </div>
