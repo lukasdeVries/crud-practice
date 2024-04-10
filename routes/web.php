@@ -1,5 +1,11 @@
 <?php
 
+use App\Http\Controllers\AuthorController;
+use App\Http\Controllers\BookController;
+use App\Http\Controllers\CharacterController;
+use App\Http\Controllers\CountryController;
+use App\Http\Controllers\UniverseController;
+use App\Models\Character;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -28,4 +34,11 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+route::resource('character', CharacterController::class);
+route::resource('author', AuthorController::class);
+route::resource('universe', UniverseController::class);
+route::resource('book', BookController::class);
+route::resource('country', CountryController::class);
+
 require __DIR__.'/auth.php';
+
